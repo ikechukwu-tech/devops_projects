@@ -1,6 +1,8 @@
 
 
 
+
+
 As we embark on an exciting jouney with the project `(lemp stack)` course, you will be introdueced to building and instaling web applications using `(lemp stack)` , this comprehensive course/project take you through a hand-on adventure, guilding you step by step in hernessing the power of linux,Nginx, MYSQL, and PHP, to create a dynamic performing website, we will dive into the architecture of `lemp stack`, understanding hoe linux provides a solid foundation, Nginx server as a poweful web server, MYSQL handles the database, and PHP handles server site functionality.
 
 

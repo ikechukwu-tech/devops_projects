@@ -1,0 +1,13 @@
+01.linux-practice-projec/
+02.git-project/
+5.shell-scripting-project/
+devops-linux-projects/
+file1.txt
+file2.txt
+file3.txt
+index.txt
+navigating-linux-filesystem.sh
+README.md
+shell-scripting/
+sorting.sh
+user-input.sh
