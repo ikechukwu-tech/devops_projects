@@ -47,3 +47,45 @@ lets take a quick example and see `client-server` communication in action. open 
 note: if your ubuntu does not have `curl`, you can download it by running :`sudo apt install caurl`
 
 in this example , your terminal will be client, while `propitixhomes.com` will be server, see the responce from the remote server in below, you can also see that the request from the URL is being serverd by a computer with an `IP address:172.31.43.66on port: 80.` more on IP addresses when we get to network related projects.
+another simple way to get a server IP address, is to use a server diagonistict tool like `PING`, it will also show sound-trip-time -time for parckets togo and bank from the server, this tool uses `ICMP PROTOCOL`.
+
+
+side self study:
+1. read about `ping` and `traceroute` network diagonistic utility. be abale to make sence out of the result of using this tools.
+
+2. refresh your knowledge on basic`SQL` command, be able to perform simple `show , drop, select and insert sql` queries.
+
+
+# IMPLEMENTING A CLIENT SERVER ARCHITECTURE USING MYSQL DATA BASED MANAGEMENT SYSTEM.
+###   TASK:
+TO DEMONSTRATE A BASIC CLIENT SERVER USING `MYSQL RDBMS`, FOLLOW THE INSTRUCTION BELOW.
+1. create and configure two linux-based vertual server(`EC2 INSTANCE IN AWS`) 
+
+COPY THE CODE BELOW: Server A name - `mysql server`
+Server B name - `mysql client`
+
+2. on `mysql server` linux server install `mysql server software`
+
+interesting fact: `MYSQL` is a open source relational database management system, its name is a combination of `MY` the name of the co founder michael widenius's daughter, and `SQL` the abbreviation for structured quary language.
+
+3. on `MYSQL CLIENT` linux server install mysql client software.
+
+4. by default both your`EC2` vertual servers are located in the same local vertual network, so they can communicate to each other using local `IP ADDRESSES`  use `MYSQL` servers local ip address to connect from `mysql client`. `MYSQL `server uses `TCP` port `3306` by default, so you will have to open it by creating a new entries in `inbound rules` in `mysql server` `security group`, for extra security donot allow all ip to reach your `mysql` server-- allow access only to the specific local ip address of your `mysql client`;
+
+5. you might need to configure mysql server to allow connection from remote host.
+
+![alt text](95.server-inter-connection.png)
+
+from `mysql client` linux server connects remotely to `mysql server` database engine without using `SSH` you must use the mysql utility to perform this action.
+
+7. check that you have successfully connect to a remote MYSQL server and can perform SQL quaries.
+
+copy the code below: Show databases;
+
+
+if you see an output similer to the image below, then you have successfully conpleted this project.![image](96.database.png)
+
+
+you have deployed a fully funtional`MYSQL client set up`. welldone, you are getting there gradually, you can futher play arround with this set up and practince in creating dropings database, table and interseting/selecting records to and from them.
+
+![image](97.illustration.png)
