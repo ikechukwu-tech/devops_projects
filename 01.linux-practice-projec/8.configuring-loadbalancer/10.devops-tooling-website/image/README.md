@@ -12,6 +12,7 @@ the tool we want our team  to be able to use is well known  and widely used by m
 
 
 
+
 `NOTE`: donot feel overwhelmed by all the tool and technologies listed above , we will gradually get pourselfes familiar with them in up comming projects.
 
 `SIDE SELF STUDY`

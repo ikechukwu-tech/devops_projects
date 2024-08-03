@@ -184,17 +184,18 @@ copy the code below : `sudo mount /dev/webdata-vg/logs-lv /var/log`
 the UUID of the device  will be used to update the `/etc/fstab` file .
 
 run : `sudo blkid`
-![image](127.sudo-blkid.png)
+![image](127.sudo-lsblk.png)
  
 sudo vi /etc/fstab
+![image](129.sudo-est-update.png)
 
 update `/etc/fstab` in the formart using your own UUID and remember to remove the leading and ending quote.
-![alt text](129.fstab.png)
+
 
 24. test the configuration and reload the daemon, copy the code :`sudo mount -a`
 `sudo systemctl daemon-reload`
 25. verify your setup by runing : `df -h`
-![image](128.mount-file.png)
+![image](129.1.df-h.png)
 
 
 
@@ -235,6 +236,9 @@ sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 setsebool -P httpd_execmem 1
 
+
+![image](<135.php-apache tes.png>)
+
 5. restart apache
 
 `sudo systemctl restart httpd`
@@ -257,7 +261,7 @@ copy the code :
  sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
  sudo setsebool -P httpd_can_network_connect=1
 # STEP FOUR(4)
-1.  `install MYSQL on your DB sever EC2
+1.  `install MYSQL on your DB sever EC2`
 
 copy the code :
 sudo yum update
@@ -272,12 +276,14 @@ GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
 FLUSH PRIVILEGES;
 SHOW DATABASES;
 exit
+![image](132.2.mysql-db.png)
+
 
 # STEP SIX(6)
 configure wordpress to connect to remote data base.
 
 `HINT` donot forget to open MYSQL port 3306 on BD server EC2. for extra xtra security, you shall allow access to BD server only from your web server ip address, in inbound rule configure specify source as /32
-![image](130.inbound-rule.png) 
+![image](130.inbound-rule-1.png)
 
 
 1. install mysql client and test that you can connect from your web server to your DB serving by using `mysql-client`
@@ -290,3 +296,4 @@ sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
 3. change permission and configuration so apache could use wordpress.
 4. enable TCP port 80 in inbound rules configuration for your web server EC2(enable from anywhere 0.0.0.0/0 or from your workspace ip)
 5. try to acces from your browser the link to your wordpress :`http://<web server ip address>/wordpress/`
+![image](136.wordpress.png)
